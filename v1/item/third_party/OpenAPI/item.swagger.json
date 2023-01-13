@@ -1,0 +1,263 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "item.proto",
+    "version": "version not set"
+  },
+  "tags": [
+    {
+      "name": "itemService"
+    }
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {},
+  "definitions": {
+    "itemcategory": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "title": "@gotags: dynamodbav:\"id\""
+        },
+        "name": {
+          "type": "string",
+          "title": "@gotags: dynamodbav:\"name\""
+        },
+        "localName": {
+          "type": "string",
+          "title": "@gotags: dynamodbav:\"localName\""
+        },
+        "description": {
+          "type": "string",
+          "title": "@gotags: dynamodbav:\"description\""
+        },
+        "images": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/itemimage"
+          },
+          "title": "@gotags: dynamodbav:\"images\""
+        },
+        "servingTime": {
+          "$ref": "#/definitions/itemservingTime",
+          "title": "@gotags: dynamodbav:\"servingTime\""
+        },
+        "restaurantId": {
+          "type": "string",
+          "title": "@gotags: dynamodbav:\"restaurantId\""
+        },
+        "type": {
+          "type": "string",
+          "title": "@gotags: dynamodbav:\"type\""
+        },
+        "pk": {
+          "type": "string",
+          "title": "@gotags: dynamodbav:\"pk\""
+        },
+        "sk": {
+          "type": "string",
+          "title": "@gotags: dynamodbav:\"sk\""
+        },
+        "rank": {
+          "type": "integer",
+          "format": "int32",
+          "title": "@gotags: dynamodbav:\"rank\""
+        },
+        "items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/itemitem"
+          },
+          "title": "@gotags: dynamodbav:\"items\""
+        }
+      }
+    },
+    "itemimage": {
+      "type": "object",
+      "properties": {
+        "assetId": {
+          "type": "string",
+          "title": "@gotags: dynamodbav:\"assetId\""
+        },
+        "publicId": {
+          "type": "string",
+          "title": "@gotags: dynamodbav:\"publicId\""
+        },
+        "url": {
+          "type": "string",
+          "title": "@gotags: dynamodbav:\"url\""
+        },
+        "secureUrl": {
+          "type": "string",
+          "title": "@gotags: dynamodbav:\"secureUrl\""
+        }
+      }
+    },
+    "itemitem": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "title": "@gotags: dynamodbav:\"id\""
+        },
+        "name": {
+          "type": "string",
+          "title": "@gotags: dynamodbav:\"name\""
+        },
+        "localName": {
+          "type": "string",
+          "title": "@gotags: dynamodbav:\"localName\""
+        },
+        "description": {
+          "type": "string",
+          "title": "@gotags: dynamodbav:\"description\""
+        },
+        "price": {
+          "type": "string",
+          "title": "@gotags: dynamodbav:\"price\""
+        },
+        "images": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/itemimage"
+          },
+          "title": "@gotags: dynamodbav:\"images\""
+        },
+        "spiceLevel": {
+          "type": "string",
+          "title": "@gotags: dynamodbav:\"spiceLevel\""
+        },
+        "isAvailable": {
+          "type": "boolean",
+          "title": "@gotags: dynamodbav:\"isAvailable\""
+        },
+        "cookingTime": {
+          "type": "string",
+          "title": "@gotags: dynamodbav:\"cookingTime\""
+        },
+        "reviews": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "title": "@gotags: dynamodbav:\"reviews\""
+        },
+        "restaurantId": {
+          "type": "string",
+          "title": "@gotags: dynamodbav:\"restaurantId\""
+        },
+        "type": {
+          "type": "string",
+          "title": "@gotags: dynamodbav:\"type\""
+        },
+        "pk": {
+          "type": "string",
+          "title": "@gotags: dynamodbav:\"pk\""
+        },
+        "sk": {
+          "type": "string",
+          "title": "@gotags: dynamodbav:\"sk\""
+        },
+        "categories": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "title": "@gotags: dynamodbav:\"categories\"\nit holds names of categories it belongs to"
+        },
+        "tags": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "title": "@gotags: dynamodbav:\"tags\""
+        },
+        "isVeg": {
+          "type": "boolean",
+          "title": "@gotags: dynamodbav:\"isVeg\""
+        },
+        "isVegan": {
+          "type": "boolean",
+          "title": "@gotags: dynamodbav:\"isVegan\""
+        },
+        "isGlutenFree": {
+          "type": "boolean",
+          "title": "@gotags: dynamodbav:\"isGlutenFree\""
+        },
+        "isDairyFree": {
+          "type": "boolean",
+          "title": "@gotags: dynamodbav:\"isDairyFree\""
+        },
+        "isNutFree": {
+          "type": "boolean",
+          "title": "@gotags: dynamodbav:\"isNutFree\""
+        },
+        "isEggFree": {
+          "type": "boolean",
+          "title": "@gotags: dynamodbav:\"isEggFree\""
+        },
+        "isSoyFree": {
+          "type": "boolean",
+          "title": "@gotags: dynamodbav:\"isSoyFree\""
+        }
+      }
+    },
+    "itemitemResponse": {
+      "type": "object",
+      "properties": {
+        "success": {
+          "type": "boolean",
+          "title": "@gotags: dynamodbav:\"success\""
+        },
+        "message": {
+          "type": "string",
+          "title": "@gotags: dynamodbav:\"message\""
+        }
+      }
+    },
+    "itemservingTime": {
+      "type": "string",
+      "enum": [
+        "ALLDAY",
+        "MORNING",
+        "LUNCH",
+        "DINNER",
+        "BREAKFAST",
+        "BRUNCH"
+      ],
+      "default": "ALLDAY"
+    },
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    }
+  }
+}
